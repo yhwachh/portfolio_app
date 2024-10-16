@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:portfolio_app/core/routes/app_router.dart';
 import 'package:portfolio_app/home_page.dart';
-import 'package:portfolio_app/l10n/l10n.dart';
+import 'package:portfolio_app/core/l10n/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Portfolio App',
       theme: ThemeData(
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const HomePage(),
+      routerConfig: appRouter.config(),
     );
   }
 }
