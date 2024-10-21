@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:portfolio_app/views/portfolio_view.dart';
 
 import 'app_router.gr.dart';
 
@@ -8,9 +9,6 @@ final appRouter = AppRouter();
 class AppRouter extends $AppRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: HomeRoute.page, initial: true),
-        AutoRoute(page: ARoute.page),
-        AutoRoute(page: BRoute.page),
-        AutoRoute(page: CRoute.page),
+        AutoRoute(page: PortfolioViewRoute.page, initial: true),
       ];
 }
