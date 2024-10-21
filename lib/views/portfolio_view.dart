@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:portfolio_app/core/widgets/custom_animated_button.dart';
 import 'package:portfolio_app/views/pages/about_me_page.dart';
 import 'package:portfolio_app/views/pages/contact_page.dart';
 import 'package:portfolio_app/views/pages/home_page.dart';
@@ -31,7 +32,6 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
         body: Stack(
       children: [
@@ -45,7 +45,12 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
             ContactPage(),
           ],
         ),
-        LeftMenu(),
+        LeftMenu(
+          onChanged: (index) {
+            _pageController.animateToPage(index,
+                duration: Duration(milliseconds: 600), curve: Curves.fastOutSlowIn);
+          },
+        ),
       ],
     ));
   }
