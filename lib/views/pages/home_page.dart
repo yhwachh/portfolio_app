@@ -6,39 +6,29 @@ import 'package:portfolio_app/core/routes/app_router.gr.dart';
 import 'package:portfolio_app/views/pages/contact_page.dart';
 import 'package:portfolio_app/views/pages/left_menu.dart';
 
+import 'package:typing_text/typing_text.dart';
+
 @RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     final locale = AppLocalizations.of(context)!;
-    return Container(
-      width: screenSize.width,
-      height: screenSize.height,
-      color: Colors.yellow,
-      child: Row(
-        children: [
-          const Expanded(
-            child: Center(
-              child: Text(
-                "Front-end.web(developer)_",
-                style: TextStyle(fontSize: 24),
-                // Centrer le texte
-              ),
-            ),
-          ),
-          const RotatedBox(
-            quarterTurns: -1,
-            child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "dark mode.",
-                  style: TextStyle(fontSize: 14),
-                )),
-          ),
-        ],
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(screenSize.width / 4),
+        child: TypingText(
+          words: [
+            'Bonjour',
+            'Je suis babyc',
+            "A customizable, animated text widget for Flutter apps, simulating the effect of typing. This package is ideal for creating engaging text animations, such as typing effects in chatbots, creative text displays in storytelling apps, or any application where text needs to be displayed dynamically and with visual flair."
+          ],
+          letterSpeed: Duration(milliseconds: 100),
+          wordSpeed: Duration(milliseconds: 1000),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

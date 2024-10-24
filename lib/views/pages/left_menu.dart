@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/core/widgets/custom_animated_button.dart';
+import 'package:portfolio_app/core/design_system/src/components/custom_animated_button.dart';
 
 class LeftMenu extends StatefulWidget {
   final Function(int index) onChanged;
+  final int selectedPage;
 
-  LeftMenu({super.key, required this.onChanged});
+  LeftMenu({super.key, required this.onChanged, required this.selectedPage});
 
   @override
   State<LeftMenu> createState() => _LeftMenuState();
@@ -13,46 +14,36 @@ class LeftMenu extends StatefulWidget {
 class _LeftMenuState extends State<LeftMenu> {
   @override
   Widget build(BuildContext context) {
-    return RotatedBox(
-      quarterTurns: -1,
-      child: Align(
-        alignment: Alignment.topCenter,
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: RotatedBox(
+        quarterTurns: -1,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomAnimatedButton(
-              label: "contact",
-              onTap: () {
-                widget.onChanged(3);
-              },
+              label: "Contact",
+              isSelected: widget.selectedPage == 3,
+              onTap: () => widget.onChanged(3),
             ),
-            SizedBox(
-              width: 30,
-            ),
+            const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "projects",
-              onTap: () {
-                widget.onChanged(2);
-              },
+              label: "About Me",
+              isSelected: widget.selectedPage == 2,
+              onTap: () => widget.onChanged(2),
             ),
-            SizedBox(
-              width: 30,
-            ),
+            const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "about me",
-              onTap: () {
-                widget.onChanged(1);
-              },
+              label: "Projects",
+              isSelected: widget.selectedPage == 1,
+              onTap: () => widget.onChanged(1),
             ),
-            SizedBox(
-              width: 30,
-            ),
+            const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "home",
-              onTap: () {
-                widget.onChanged(0);
-              },
+              label: "Home",
+              isSelected: widget.selectedPage == 0,
+              onTap: () => widget.onChanged(0),
             ),
           ],
         ),

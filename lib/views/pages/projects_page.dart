@@ -12,6 +12,6 @@ class ProjectsPage extends StatelessWidget {
         width: screenSize.width,
         height: screenSize.height,
         color: Colors.green,
-        child: Center(child: Text("Project Page")));
+        child: const Center(child: Text("Project Page")));
   }
 }
