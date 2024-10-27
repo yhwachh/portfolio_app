@@ -23,6 +23,7 @@ class _LeftMenuState extends State<LeftMenu> {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomAnimatedButton(
+              
               label: "Contact",
               isSelected: widget.selectedPage == 3,
               onTap: () => widget.onChanged(3),

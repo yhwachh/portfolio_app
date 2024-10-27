@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/core/design_system/src/components/custom_animated_button.dart';
 import 'package:portfolio_app/views/pages/about_me_page.dart';
 import 'package:portfolio_app/views/pages/contact_page.dart';
@@ -33,7 +34,9 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Scaffold(
+      backgroundColor: theme.colors.bgColor,
         body: Stack(
       children: [
         PageView(
