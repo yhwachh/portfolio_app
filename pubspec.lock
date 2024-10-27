@@ -546,6 +546,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
+  typing_text:
+    dependency: "direct main"
+    description:
+      name: typing_text
+      sha256: b88059554beaa63f270b0848a6806ecb9d088ec503071e8da1971b50fcb6854e
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   vector_math:
     dependency: transitive
     description:
@@ -574,10 +582,10 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: cd3543bd5798f6ad290ea73d210f423502e71900302dde696f8bff84bf89a1cb
+      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "0.5.1"
   web_socket:
     dependency: transitive
     description:

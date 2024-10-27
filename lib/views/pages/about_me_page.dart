@@ -11,9 +11,8 @@ class AboutMePage extends StatelessWidget {
     return Container(
       width: screenSize.width,
       height: screenSize.height,
-      color: Colors.yellow,
-      child: Center(
-        
+      color: Colors.purple,
+      child: const Center(
         child: Text('About Me Page'),
       ),
     );
