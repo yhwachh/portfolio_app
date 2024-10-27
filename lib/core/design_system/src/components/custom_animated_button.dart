@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class CustomAnimatedButton extends StatelessWidget {
   final String label;
   final VoidCallback? onTap;
-  final bool isSelected; // Ajout d'une propriété pour savoir si le bouton est sélectionné
+  final bool
+      isSelected; // Ajout d'une propriété pour savoir si le bouton est sélectionné
 
-  CustomAnimatedButton({super.key, required this.label, this.onTap, this.isSelected = false});
+  CustomAnimatedButton(
+      {super.key, required this.label, this.onTap, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return GestureDetector(
       onTap: onTap,
       child: AnimatedContainer(
@@ -17,7 +21,9 @@ class CustomAnimatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
-              color: isSelected ? Colors.black : Colors.transparent, // Soulignement bleu si sélectionné
+              color: isSelected
+                  ? theme.colors.textColor
+                  : Colors.transparent, // Soulignement bleu si sélectionné
               width: 3.0, // Épaisseur du soulignement
             ),
           ),
@@ -27,7 +33,10 @@ class CustomAnimatedButton extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              color: isSelected ? Colors.black : Colors.black.withOpacity(0.7), // Texte noir ou légèrement transparent
+              color: isSelected
+                  ? theme.colors.textColor
+                  : theme.colors.textColor
+                      .withOpacity(0.7), // Texte noir ou légèrement transparent
               fontWeight: FontWeight.bold,
             ),
           ),
