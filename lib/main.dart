@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppTheme(
-      data: AppThemeData.dark(),
+      data: AppThemeData.light(),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Portfolio App',
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         supportedLocales: L10n.all,
-        locale: const Locale('en'),
+        locale: const Locale('fr'),
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

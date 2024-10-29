@@ -36,33 +36,67 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
     return Scaffold(
-      backgroundColor: theme.colors.bgColor,
-        body: Stack(
-      children: [
-        PageView(
-          controller: _pageController,
-          onPageChanged: (value) {
-            setState(() {
-              _selectedIndex = value;
-            });
-          },
-          scrollDirection: Axis.vertical,
-          children: const [
-            HomePage(),
-            ProjectsPage(),
-            AboutMePage(),
-            ContactPage(),
+        appBar: AppBar(
+          centerTitle: false,
+          backgroundColor: theme.colors.bgColor,
+          title: Text(
+            'IBA.',
+            style: TextStyle(
+              color: theme.colors.textColor,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          actions: [
+            Column(
+              children: [
+                Text(
+                  'self service',
+                  style: TextStyle(
+                    color: theme.colors.textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '20% OFF',
+                  style: TextStyle(
+                    color: theme.colors.textColor,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
-        LeftMenu(
-          selectedPage: _selectedIndex,
-          onChanged: (index) {
-            _pageController.animateToPage(index,
-                duration: const Duration(milliseconds: 600),
-                curve: Curves.fastOutSlowIn);
-          },
-        ),
-      ],
-    ));
+        backgroundColor: theme.colors.bgColor,
+        body: Stack(
+          children: [
+            PageView(
+              controller: _pageController,
+              onPageChanged: (value) {
+                setState(() {
+                  _selectedIndex = value;
+                });
+              },
+              scrollDirection: Axis.vertical,
+              children: const [
+                HomePage(),
+                ProjectsPage(),
+                AboutMePage(),
+                ContactPage(),
+              ],
+            ),
+            LeftMenu(
+              selectedPage: _selectedIndex,
+              onChanged: (index) {
+                _pageController.animateToPage(index,
+                    duration: const Duration(milliseconds: 600),
+                    curve: Curves.fastOutSlowIn);
+              },
+            ),
+          ],
+        ));
   }
 }
