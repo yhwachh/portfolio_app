@@ -39,7 +39,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   auto_route: ^7.8.4
-  typing_text: ^1.0.4
+
 
 dev_dependencies:
   flutter_test:
