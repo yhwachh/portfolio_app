@@ -3,6 +3,7 @@
     "txt_contact": "Contact",
     "txt_about_me": "About Me",
     "txt_projects": "Projects",
-    "txt_home": "Home"
-
+    "txt_home": "Home",
+    "txt_home_intro0": "Passionate web developer specializing in Flutter to build modern, high-performance applications.",
+    "txt_home_intro1": "Continuously progressing, I actively explore other technologies to expand my skills and deliver innovative solutions."
 }
