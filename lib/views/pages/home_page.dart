@@ -17,7 +17,6 @@ class HomePage extends StatelessWidget {
 
     final theme = AppTheme.of(context);
     final screenSize = MediaQuery.of(context).size;
-    final locale = AppLocalizations.of(context)!;
     return Center(
         child: Padding(
       padding: EdgeInsets.all(screenSize.width / 4),
