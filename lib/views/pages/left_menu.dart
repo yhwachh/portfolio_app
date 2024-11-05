@@ -23,20 +23,24 @@ class _LeftMenuState extends State<LeftMenu> {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomAnimatedButton(
-              
               label: "Contact",
+              isSelected: widget.selectedPage == 4,
+              onTap: () => widget.onChanged(4),
+            ),
+            const SizedBox(width: 30),
+            CustomAnimatedButton(
+              label: "About Me",
               isSelected: widget.selectedPage == 3,
               onTap: () => widget.onChanged(3),
             ),
             const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "About Me",
+              label: "Projects",
               isSelected: widget.selectedPage == 2,
               onTap: () => widget.onChanged(2),
             ),
-            const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "Projects",
+              label: "My Skills",
               isSelected: widget.selectedPage == 1,
               onTap: () => widget.onChanged(1),
             ),

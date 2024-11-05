@@ -5,6 +5,8 @@
     "txt_projects": "Projets",
     "txt_home": "Home",
     "txt_home_intro0": "Développeur web passionné, je me spécialise principalement en Flutter pour créer des applications modernes et performantes.",
-    "txt_home_intro1": "Toujours en progression, j'explore activement d'autres technologies pour enrichir mes compétences et offrir des solutions innovantes."
+    "txt_home_intro1": "Toujours en progression, j'explore activement d'autres technologies pour enrichir mes compétences et offrir des solutions innovantes.",
+    "txt_skills_title":"Les compétences, outils et technologies dans lesquels je suis vraiment compétent :",
+    "txt_skill":"Mes Competences"
 
 }

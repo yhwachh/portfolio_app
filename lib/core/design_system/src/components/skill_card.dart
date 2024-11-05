@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
+
+class SkillCard extends StatelessWidget {
+  final String urlimage;
+  final String title;
+
+  const SkillCard({super.key, required this.title, required this.urlimage});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      SizedBox(height: 64, width: 64, child: Image.asset(urlimage)),
+      SizedBox(
+          width: 100,
+          child: Flexible(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+            ),
+          )),
+    ]);
+  }
+}
