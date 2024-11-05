@@ -7,6 +7,7 @@ import 'package:portfolio_app/views/pages/contact_page.dart';
 import 'package:portfolio_app/views/pages/home_page.dart';
 import 'package:portfolio_app/views/pages/left_menu.dart';
 import 'package:portfolio_app/views/pages/projects_page.dart';
+import 'package:portfolio_app/views/pages/skills_page.dart';
 
 @RoutePage()
 class PortfolioViewPage extends StatefulWidget {
@@ -48,25 +49,18 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
             ),
           ),
           actions: [
-            Column(
-              children: [
-                Text(
-                  'self service',
-                  style: TextStyle(
-                    color: theme.colors.textColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  '20% OFF',
-                  style: TextStyle(
-                    color: theme.colors.textColor,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Download CV",
+                    style: TextStyle(
+                      color: theme.colors.textColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
             ),
           ],
         ),
@@ -83,6 +77,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
               scrollDirection: Axis.vertical,
               children: const [
                 HomePage(),
+                SkillPage(),
                 ProjectsPage(),
                 AboutMePage(),
                 ContactPage(),
