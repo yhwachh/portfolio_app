@@ -33,6 +33,7 @@ class SkillPage extends StatelessWidget {
       child: Column(
         children: [
           PageTitle(
+              alignment: Alignment.centerRight,
               title: locale.txt_skill,
               crossAxisAlignment: CrossAxisAlignment.end),
           Spacer(),
