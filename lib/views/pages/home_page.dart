@@ -15,22 +15,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
 
-    final theme = AppTheme.of(context);
     final screenSize = MediaQuery.of(context).size;
-    return Center(
-        child: Padding(
-      padding: EdgeInsets.all(screenSize.width / 4),
-      child: Row(
-        children: [
-          TypingTextAnimation(
-            texts: [
-              localizations.txt_home_intro0,
-              localizations.txt_home_intro1
-            ],
-            textStyle: TextStyle(color: Colors.black, fontSize: 24.0),
-          ),
-        ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.2),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: screenSize.height),
+        child: Center(
+            child: Row(
+          children: [
+            TypingTextAnimation(
+              texts: [
+                localizations.txt_home_intro0,
+                localizations.txt_home_intro1
+              ],
+              textStyle: TextStyle(color: Colors.black, fontSize: 24.0),
+            ),
+          ],
+        )),
       ),
-    ));
+    );
   }
 }
