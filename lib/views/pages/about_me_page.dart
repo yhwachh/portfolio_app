@@ -31,20 +31,18 @@ class AboutMePage extends StatelessWidget {
           Wrap(alignment: WrapAlignment.center, children: [
             SoftSkillCard(
               title: "I have experience with:",
-              description:
-                  "asdasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasderqwerqwerqwerqwerqwefasdfasdfasdf",
+              description: "asdasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfdf",
               urlimage: "assets/images/dart.png",
             ),
             SoftSkillCard(
               title: "I have experience with:",
               description:
-                  "asdasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasderqwerqwerqwerqwerqwefasdfasdfasdf",
+                  "asdasdfasdfasdfasdfasdfasdfasdfasdfawefasdfasdfasdf",
               urlimage: "assets/images/dart.png",
             ),
             SoftSkillCard(
               title: "I have experience with:",
-              description:
-                  "asdasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasderqwerqwerqwerqwerqwefasdfasdfasdf",
+              description: "asdasdfasdfasdfasdfasdfasdfasdfasdfasf",
               urlimage: "assets/images/dart.png",
             ),
           ]),

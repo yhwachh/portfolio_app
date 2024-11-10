@@ -8,6 +8,7 @@ import 'package:portfolio_app/views/pages/home_page.dart';
 import 'package:portfolio_app/views/pages/left_menu.dart';
 import 'package:portfolio_app/views/pages/projects_page.dart';
 import 'package:portfolio_app/views/pages/skills_page.dart';
+import 'package:scroll_to_id/scroll_to_id.dart';
 
 @RoutePage()
 class PortfolioViewPage extends StatefulWidget {
@@ -18,18 +19,29 @@ class PortfolioViewPage extends StatefulWidget {
 }
 
 class _PortfolioViewPageState extends State<PortfolioViewPage> {
-  late final PageController _pageController;
+  ScrollToId scrollToId = ScrollToId();
+  late final ScrollController scrollController;
   int _selectedIndex = 0;
+
+  void listenScroll() {
+    final index = scrollToId.idPosition();
+    if (index == null) return;
+    setState(() {
+      _selectedIndex = int.parse(index);
+    });
+  }
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
+    scrollController = ScrollController()..addListener(listenScroll);
+    scrollToId = ScrollToId(scrollController: scrollController);
   }
 
   @override
   void dispose() {
-    _pageController.dispose();
+    listenScroll;
+    scrollController.dispose();
     super.dispose();
   }
 
@@ -66,6 +78,33 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
         ),
         backgroundColor: theme.colors.bgColor,
         body: Stack(
+          alignment: Alignment.topRight,
+          children: [
+            InteractiveScrollViewer(
+              scrollToId: scrollToId,
+              children: [
+                ScrollContent(id: "0", child: HomePage()),
+                ScrollContent(id: "1", child: SkillPage()),
+                ScrollContent(id: "2", child: ProjectsPage()),
+                ScrollContent(id: "3", child: AboutMePage()),
+                ScrollContent(id: "4", child: ContactPage()),
+              ],
+            ),
+            LeftMenu(
+              selectedPage: _selectedIndex,
+              onChanged: (index) {
+                scrollToId.animateTo('$index',
+                    duration: Duration(milliseconds: 600),
+                    curve: Curves.fastOutSlowIn);
+              },
+            ),
+          ],
+        ));
+  }
+}
+
+
+/*Stack(
           children: [
             PageView(
               controller: _pageController,
@@ -92,6 +131,4 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
               },
             ),
           ],
-        ));
-  }
-}
+        ));*/
