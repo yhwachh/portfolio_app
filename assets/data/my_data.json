@@ -1,0 +1,40 @@
+{
+    "user": {
+        "name": "Ibraguim Albakov",
+        "email": "albakov.ibraguim@gmail.com",
+        "avatar_path": "assets/images/profile.jpeg",
+        "bio": "Après trois années d'expérience professionnelle, j'ai entrepris une reconversion en me formant aux langages de programmation C et C++, élargissant ensuite mes compétences à Dart et Python ainsi qu'à divers frameworks web. Animé par une curiosité sans cesse renouvelée, je nourris également un intérêt grandissant pour les connexions entre la programmation et l'économie, cherchant ainsi à approfondir mes connaissances dans ces domaines complémentaires.",
+        "linkedin_url": "https://www.linkedin.com/in/ibraguim-albakov",
+        "github_url": "https://github.com/yhwachh"
+    },
+    "skills": [ 
+        "flutter",
+        "Dart",
+        "Firebase",
+        "C++",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Python",
+        "Docker",
+        "Figma",
+        "Notion",
+        "Github",
+        "Slack"
+
+    ],
+    "projects": [
+        {
+            "title": "Flutter App",
+            "description": "Flutter app for tracking your daily expenses",
+            "skills": ["Flutter", "Dart", "Firebase", "Figma"],
+            "link": "",
+            "image_path": ""
+        }
+    ]
+    
+
+
+
+
+}
