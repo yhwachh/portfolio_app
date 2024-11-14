@@ -48,6 +48,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
           centerTitle: false,
@@ -80,16 +81,18 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
         body: Stack(
           alignment: Alignment.topRight,
           children: [
-            InteractiveScrollViewer(
-              scrollToId: scrollToId,
-              children: [
-                ScrollContent(id: "0", child: HomePage()),
-                ScrollContent(id: "1", child: SkillPage()),
-                ScrollContent(id: "2", child: ProjectsPage()),
-                ScrollContent(id: "3", child: AboutMePage()),
-                ScrollContent(id: "4", child: ContactPage()),
-                ScrollContent(id: "5", child: HomeView()),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
+              child: InteractiveScrollViewer(
+                scrollToId: scrollToId,
+                children: [
+                  ScrollContent(id: "0", child: HomePage()),
+                  ScrollContent(id: "1", child: SkillPage()),
+                  ScrollContent(id: "2", child: ProjectsPage()),
+                  ScrollContent(id: "3", child: AboutMePage()),
+                  ScrollContent(id: "4", child: ContactPage()),
+                ],
+              ),
             ),
             LeftMenu(
               selectedPage: _selectedIndex,

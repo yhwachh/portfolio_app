@@ -29,7 +29,15 @@
             "description": "Flutter app for tracking your daily expenses",
             "skills": ["Flutter", "Dart", "Firebase", "Figma"],
             "link": "",
-            "image_path": ""
+            "image_path": "assets/images/ingush.png"
+        },
+        {
+            "title": "firebase App",
+            "description": "Flutter app for tracking your daily expenses",
+            "skills": ["Flutter", "Dart", "Firebase", "Figma"],
+            "link": "",
+            "image_path": "assets/images/ingush.png"
+
         }
     ]
     
