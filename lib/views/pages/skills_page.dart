@@ -29,17 +29,14 @@ class SkillPage extends StatelessWidget {
     ];
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: PageTitle(
-              alignment: Alignment.centerRight,
-              title: locale.txt_skill,
-              crossAxisAlignment: CrossAxisAlignment.end),
-        ),
+        PageTitle(
+            alignment: Alignment.centerLeft,
+            title: locale.txt_skill,
+            crossAxisAlignment: CrossAxisAlignment.end),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: screenSize.width * 0.2,
-            vertical: screenSize.height * 0.2,
+            horizontal: screenSize.width * 0.1,
+            vertical: screenSize.height * 0.1,
           ),
           child: Column(
             children: [

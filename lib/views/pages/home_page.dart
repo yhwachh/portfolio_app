@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
 
     final screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.2),
+      padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.15),
       child: ConstrainedBox(
         constraints: BoxConstraints(minHeight: screenSize.height),
         child: Center(

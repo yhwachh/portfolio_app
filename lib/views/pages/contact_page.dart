@@ -9,40 +9,49 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        PageTitle(
-            title: "Contact Me",
-            crossAxisAlignment: CrossAxisAlignment.center,
-            alignment: Alignment.center),
-        const SizedBox(height: 30),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ContactMeCard(
-              imagePhath: 'assets/images/linkedin2.png',
-              onTap: () {
-                print("object");
-              },
-            ),
-            SizedBox(width: 30),
-            ContactMeCard(
-              imagePhath: 'assets/images/github2.png',
-              onTap: () {
-                print("object");
-              },
-            ),
-            SizedBox(width: 30),
-            ContactMeCard(
-              imagePhath: 'assets/images/gmail2.png',
-              onTap: () {
-                print("object");
-              },
-            ),
-          ],
-        ),
-      ],
+    final screenSize = MediaQuery.of(context).size;
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: screenSize.height),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          PageTitle(
+              title: "Contact Me",
+              crossAxisAlignment: CrossAxisAlignment.center,
+              alignment: Alignment.center),
+          const SizedBox(height: 40),
+          Wrap(
+            children: [
+              ContactMeCard(
+                height: 60,
+                width: 60,
+                imagePhath: 'assets/images/linkedin2.png',
+                onTap: () {
+                  print("object");
+                },
+              ),
+              SizedBox(width: 30),
+              ContactMeCard(
+                height: 60,
+                width: 60,
+                imagePhath: 'assets/images/github2.png',
+                onTap: () {
+                  print("object");
+                },
+              ),
+              SizedBox(width: 30),
+              ContactMeCard(
+                height: 60,
+                width: 60,
+                imagePhath: 'assets/images/gmail2.png',
+                onTap: () {
+                  print("object");
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

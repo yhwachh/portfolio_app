@@ -25,27 +25,31 @@ class ProjectCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            spreadRadius: 0.1,
-            blurRadius: 4,
-          ),
+        border: Border.all(
+          color: UIColorData.gray200,
+          width: 2,
+        ),
+      ),
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        children: [
+          if (flipCard) _descriptionCard(title, description, tags, onTap),
+          _imageCard(UrlImage),
+          if (!flipCard) _descriptionCard(title, description, tags, onTap),
         ],
       ),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        if (flipCard) _descriptionCard(title, description, tags, onTap),
-        _imageCard(UrlImage),
-        if (!flipCard) _descriptionCard(title, description, tags, onTap),
-      ]),
     );
   }
 }
 
 Container _imageCard(String UrlImage) {
   return Container(
-      color: UIColorData.gray50,
       height: 480,
       width: 576,
+      decoration: BoxDecoration(
+        color: UIColorData.gray50,
+        borderRadius: BorderRadius.circular(16),
+      ),
       child: Center(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
