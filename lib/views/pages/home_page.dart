@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     final localizations = AppLocalizations.of(context)!;
 
     final screenSize = MediaQuery.of(context).size;
@@ -28,7 +29,8 @@ class HomePage extends StatelessWidget {
                 localizations.txt_home_intro0,
                 localizations.txt_home_intro1
               ],
-              textStyle: TextStyle(color: Colors.black, fontSize: 24.0),
+              textStyle:
+                  TextStyle(color: theme.colors.textColor, fontSize: 24.0),
             ),
           ],
         )),

@@ -14,6 +14,7 @@ class SoftSkillCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Container(
         width: 278,
         height: 72,
@@ -47,13 +48,15 @@ class SoftSkillCard extends StatelessWidget {
                     Text(
                       title,
                       style: TextStyle(
+                        color: theme.colors.textColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       description,
-                      style: TextStyle(fontSize: 10),
+                      style: TextStyle(
+                          color: theme.colors.textColor, fontSize: 10),
                     )
                   ],
                 ),

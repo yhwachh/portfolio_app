@@ -11,6 +11,7 @@ class ExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Container(
       width: 374,
       height: 257,
@@ -39,10 +40,13 @@ class ExperienceCard extends StatelessWidget {
                 children: [
                   Text(title,
                       style: TextStyle(
+                        color: theme.colors.textColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       )),
-                  Text(experiences),
+                  Text(
+                      style: TextStyle(color: theme.colors.textColor),
+                      experiences),
                 ],
               ),
             ),

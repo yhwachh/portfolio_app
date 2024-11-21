@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
 
 class SkillCard extends StatelessWidget {
@@ -9,6 +10,7 @@ class SkillCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Column(children: [
       SizedBox(height: 64, width: 64, child: Image.asset(urlimage)),
       SizedBox(
@@ -17,6 +19,9 @@ class SkillCard extends StatelessWidget {
             child: Text(
               title,
               textAlign: TextAlign.center,
+              style: TextStyle(
+                color: theme.colors.textColor,
+              ),
             ),
           )),
     ]);

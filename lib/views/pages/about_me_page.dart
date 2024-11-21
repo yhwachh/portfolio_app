@@ -4,6 +4,7 @@ import 'package:portfolio_app/core/design_system/src/components/page_title.dart'
 import 'package:portfolio_app/core/design_system/src/components/soft_skill_card.dart';
 import 'package:portfolio_app/core/design_system/src/components/experience_card.dart';
 import 'package:portfolio_app/core/design_system/src/components/profile_component.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 @RoutePage()
 class AboutMePage extends StatelessWidget {
@@ -11,6 +12,8 @@ class AboutMePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
+
     final screenSize = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -21,7 +24,7 @@ class AboutMePage extends StatelessWidget {
         children: [
           PageTitle(
             alignment: Alignment.centerLeft,
-            title: "About Me",
+            title: locale.txt_about_me,
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
           ProfileComponent(

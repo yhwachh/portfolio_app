@@ -21,6 +21,7 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -33,9 +34,11 @@ class ProjectCard extends StatelessWidget {
       child: Wrap(
         alignment: WrapAlignment.center,
         children: [
-          if (flipCard) _descriptionCard(title, description, tags, onTap),
+          if (flipCard)
+            _descriptionCard(title, description, tags, onTap, theme),
           _imageCard(UrlImage),
-          if (!flipCard) _descriptionCard(title, description, tags, onTap),
+          if (!flipCard)
+            _descriptionCard(title, description, tags, onTap, theme),
         ],
       ),
     );
@@ -65,8 +68,8 @@ Container _imageCard(String UrlImage) {
       ));
 }
 
-Container _descriptionCard(
-    String title, String description, List<String> tags, VoidCallback onTap) {
+Container _descriptionCard(String title, String description, List<String> tags,
+    VoidCallback onTap, dynamic theme) {
   return Container(
     height: 480,
     width: 576,
