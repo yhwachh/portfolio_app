@@ -21,9 +21,7 @@ class CustomAnimatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
-              color: isSelected
-                  ? theme.colors.textColor
-                  : Colors.transparent, // Soulignement bleu si sélectionné
+              color: isSelected ? theme.colors.textColor : Colors.transparent,
               width: 3.0, // Épaisseur du soulignement
             ),
           ),
