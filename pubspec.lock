@@ -22,6 +22,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.7.0"
+  animated_fab_button_menu:
+    dependency: "direct main"
+    description:
+      name: animated_fab_button_menu
+      sha256: "3d942e509264fac1072507308254bb0693cb13a8faeba36563ffdfed1f63c9a0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   args:
     dependency: transitive
     description:

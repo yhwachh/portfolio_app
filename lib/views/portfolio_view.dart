@@ -1,3 +1,4 @@
+import 'package:animated_fab_button_menu/animated_fab_button_menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
@@ -12,6 +13,7 @@ import 'package:portfolio_app/views/pages/left_menu.dart';
 import 'package:portfolio_app/views/pages/projects_page.dart';
 import 'package:portfolio_app/views/pages/skills_page.dart';
 import 'package:scroll_to_id/scroll_to_id.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 @RoutePage()
 class PortfolioViewPage extends StatefulWidget {
@@ -53,9 +55,80 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
     final theme = AppTheme.of(context);
     final screenSize = MediaQuery.of(context).size;
+    final isMobileSize = screenSize.width > 600 && screenSize.height > 700;
     return Scaffold(
+        floatingActionButton: (isMobileSize)
+            ? null
+            : FabMenu(
+                fabBackgroundColor: theme.colors.textColor,
+                elevation: 2.0,
+                fabAlignment: Alignment.bottomRight,
+                fabIcon: Icon(
+                  Icons.more_horiz,
+                  color: theme.colors.bgColor,
+                ),
+                closeMenuButton: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ),
+                overlayOpacity: 0.5,
+                overlayColor: theme.colors.fgColor,
+                children: [
+                  MenuItem(
+                    title: locale.txt_home,
+                    onTap: () {
+                      onCrollToId("0");
+                    },
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  MenuItem(
+                    title: locale.txt_skill,
+                    onTap: () {
+                      onCrollToId("1");
+                    },
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  MenuItem(
+                    title: locale.txt_projects,
+                    onTap: () {
+                      onCrollToId("2");
+                    },
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  MenuItem(
+                    title: locale.txt_about_me,
+                    onTap: () {
+                      onCrollToId("3");
+                    },
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  MenuItem(
+                    title: locale.txt_contact,
+                    onTap: () {
+                      onCrollToId("4");
+                    },
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
         appBar: AppBar(
           centerTitle: false,
           backgroundColor: theme.colors.bgColor,
@@ -144,15 +217,19 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                 ],
               ),
             ),
-            LeftMenu(
-              selectedPage: _selectedIndex,
-              onChanged: (index) {
-                scrollToId.animateTo('$index',
-                    duration: Duration(milliseconds: 600),
-                    curve: Curves.fastOutSlowIn);
-              },
-            ),
+            if (isMobileSize)
+              LeftMenu(
+                selectedPage: _selectedIndex,
+                onChanged: (index) {
+                  onCrollToId(index.toString());
+                },
+              ),
           ],
         ));
+  }
+
+  void onCrollToId(String id) {
+    scrollToId.animateTo(id,
+        duration: Duration(milliseconds: 600), curve: Curves.fastOutSlowIn);
   }
 }
