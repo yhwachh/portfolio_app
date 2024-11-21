@@ -15,7 +15,7 @@ class ProjectsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-     final theme = AppTheme.of(context);
+    final theme = AppTheme.of(context);
     final local = AppLocalizations.of(context)!;
     final screenSize = MediaQuery.of(context).size;
     final myDataAsyncValue = ref.watch(myDataProvider);
@@ -23,9 +23,10 @@ class ProjectsPage extends ConsumerWidget {
     return Column(
       children: [
         PageTitle(
-            title:local.txt_projects,
+            title: local.txt_projects,
             crossAxisAlignment: CrossAxisAlignment.end,
             alignment: Alignment.centerRight),
+        const SizedBox(height: 40),
         myDataAsyncValue.when(
           data: (data) {
             return Column(

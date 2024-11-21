@@ -36,6 +36,7 @@ class ProfileComponent extends StatelessWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (constraints.maxWidth < 800) SizedBox(height: 20),
                     Text(title,
                         style: TextStyle(
                             color: theme.colors.textColor,
