@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/core/design_system/src/components/custom_animated_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LeftMenu extends StatefulWidget {
   final Function(int index) onChanged;
@@ -14,9 +15,13 @@ class LeftMenu extends StatefulWidget {
 class _LeftMenuState extends State<LeftMenu> {
   @override
   Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+
     return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxHeight > 600 && constraints.maxWidth > 600) {
-        return _menu();
+      if (constraints.maxHeight > 700 && constraints.maxWidth > 600) {
+        return _menu(
+          local,
+        );
       } else {
         return Align(
           alignment: Alignment.topLeft,
@@ -26,35 +31,35 @@ class _LeftMenuState extends State<LeftMenu> {
             itemBuilder: (context) => [
               PopupMenuItem(
                 child: CustomAnimatedButton(
-                  label: "Home",
+                  label: local.txt_home,
                   isSelected: widget.selectedPage == 0,
                   onTap: () => widget.onChanged(0),
                 ),
               ),
               PopupMenuItem(
                 child: CustomAnimatedButton(
-                  label: "My Skills",
+                  label: local.txt_skill,
                   isSelected: widget.selectedPage == 1,
                   onTap: () => widget.onChanged(1),
                 ),
               ),
               PopupMenuItem(
                 child: CustomAnimatedButton(
-                  label: "Projects",
+                  label: local.txt_projects,
                   isSelected: widget.selectedPage == 2,
                   onTap: () => widget.onChanged(2),
                 ),
               ),
               PopupMenuItem(
                 child: CustomAnimatedButton(
-                  label: "About Me",
+                  label: local.txt_about_me,
                   isSelected: widget.selectedPage == 3,
                   onTap: () => widget.onChanged(3),
                 ),
               ),
               PopupMenuItem(
                 child: CustomAnimatedButton(
-                  label: "Contact",
+                  label: local.txt_contact,
                   isSelected: widget.selectedPage == 4,
                   onTap: () => widget.onChanged(4),
                 ),
@@ -66,7 +71,9 @@ class _LeftMenuState extends State<LeftMenu> {
     });
   }
 
-  Align _menu() {
+  Align _menu(
+    AppLocalizations local,
+  ) {
     return Align(
       alignment: Alignment.centerLeft,
       child: RotatedBox(
@@ -76,31 +83,31 @@ class _LeftMenuState extends State<LeftMenu> {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomAnimatedButton(
-              label: "Contact",
+              label: local.txt_contact,
               isSelected: widget.selectedPage == 4,
               onTap: () => widget.onChanged(4),
             ),
             const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "About Me",
+              label: local.txt_about_me,
               isSelected: widget.selectedPage == 3,
               onTap: () => widget.onChanged(3),
             ),
             const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "Projects",
+              label: local.txt_projects,
               isSelected: widget.selectedPage == 2,
               onTap: () => widget.onChanged(2),
             ),
             const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "My Skills",
+              label: local.txt_skill,
               isSelected: widget.selectedPage == 1,
               onTap: () => widget.onChanged(1),
             ),
             const SizedBox(width: 30),
             CustomAnimatedButton(
-              label: "Home",
+              label: local.txt_home,
               isSelected: widget.selectedPage == 0,
               onTap: () => widget.onChanged(0),
             ),

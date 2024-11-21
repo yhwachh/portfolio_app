@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class ProfileComponent extends StatelessWidget {
   final String title;
@@ -13,6 +14,7 @@ class ProfileComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         constraints: BoxConstraints(maxWidth: 800),
@@ -36,9 +38,18 @@ class ProfileComponent extends StatelessWidget {
                   children: [
                     Text(title,
                         style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold)),
+                            color: theme.colors.textColor,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold)),
                     SizedBox(height: 16),
-                    SizedBox(width: 500, child: Text(description))
+                    SizedBox(
+                        width: 500,
+                        child: Text(
+                          description,
+                          style: TextStyle(
+                            color: theme.colors.textColor,
+                          ),
+                        ))
                   ],
                 );
               })

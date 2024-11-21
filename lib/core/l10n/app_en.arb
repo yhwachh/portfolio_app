@@ -1,11 +1,11 @@
 {
     "app_language": "English",
-    "txt_contact": "Contact",
-    "txt_about_me": "About Me",
-    "txt_projects": "Projects",
-    "txt_home": "Home",
+    "txt_contact": "contact me",
+    "txt_about_me": "about me",
+    "txt_projects": "my projects",
+    "txt_home": "home",
     "txt_home_intro0": "Passionate web developer specializing in Flutter to build modern, high-performance applications.",
     "txt_home_intro1": "Continuously progressing, I actively explore other technologies to expand my skills and deliver innovative solutions.",
     "txt_skills_title": "The skills, tools and technologies I am really good at:",
-    "txt_skill": "My Skills"
+    "txt_skill": "my skills"
     }

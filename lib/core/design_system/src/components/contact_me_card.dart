@@ -15,9 +15,7 @@ class ContactMeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print("object");
-      },
+      onTap: onTap,
       child: Image.asset(
         imagePhath,
         height: height,

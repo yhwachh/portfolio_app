@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class PageTitle extends StatelessWidget {
   final String title;
@@ -12,6 +13,7 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Align(
       alignment: alignment,
       child: Column(
@@ -20,6 +22,7 @@ class PageTitle extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
+              color: theme.colors.textColor,
               fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
@@ -27,7 +30,7 @@ class PageTitle extends StatelessWidget {
           Container(
             height: 5,
             width: 100,
-            color: Colors.black,
+            color: theme.colors.textColor,
           )
         ],
       ),

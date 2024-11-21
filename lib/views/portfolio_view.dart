@@ -4,7 +4,6 @@ import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/views/pages/about_me_page.dart';
 import 'package:portfolio_app/views/pages/contact_page.dart';
 import 'package:portfolio_app/views/pages/home_page.dart';
-import 'package:portfolio_app/views/pages/home_view.dart';
 import 'package:portfolio_app/views/pages/left_menu.dart';
 import 'package:portfolio_app/views/pages/projects_page.dart';
 import 'package:portfolio_app/views/pages/skills_page.dart';
@@ -12,7 +11,7 @@ import 'package:scroll_to_id/scroll_to_id.dart';
 
 @RoutePage()
 class PortfolioViewPage extends StatefulWidget {
-  const PortfolioViewPage({super.key});
+  const PortfolioViewPage({super.key, });
 
   @override
   State<PortfolioViewPage> createState() => _PortfolioViewPageState();
@@ -64,16 +63,25 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 20),
-              child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Download CV",
-                    style: TextStyle(
-                      color: theme.colors.textColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )),
+              child: Row(
+                children: [
+                 
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: theme.colors.bgColor,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Download CV",
+                        style: TextStyle(
+                          backgroundColor: theme.colors.bgColor,
+                          color: theme.colors.textColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                ],
+              ),
             ),
           ],
         ),
@@ -82,7 +90,8 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           alignment: Alignment.topRight,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
+              padding:
+                  EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
               child: InteractiveScrollViewer(
                 scrollToId: scrollToId,
                 children: [

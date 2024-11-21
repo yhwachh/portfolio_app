@@ -1,9 +1,13 @@
+import 'dart:math';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
 import 'package:portfolio_app/core/design_system/src/components/project_card.dart';
 import 'package:portfolio_app/providers/my_data_notifier.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 @RoutePage()
 class ProjectsPage extends ConsumerWidget {
@@ -11,13 +15,15 @@ class ProjectsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+     final theme = AppTheme.of(context);
+    final local = AppLocalizations.of(context)!;
     final screenSize = MediaQuery.of(context).size;
     final myDataAsyncValue = ref.watch(myDataProvider);
 
     return Column(
       children: [
         PageTitle(
-            title: "Projects",
+            title:local.txt_projects,
             crossAxisAlignment: CrossAxisAlignment.end,
             alignment: Alignment.centerRight),
         myDataAsyncValue.when(
