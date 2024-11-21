@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
@@ -27,6 +29,7 @@ class AboutMePage extends StatelessWidget {
             title: locale.txt_about_me,
             crossAxisAlignment: CrossAxisAlignment.start,
           ),
+          SizedBox(height: 50),
           ProfileComponent(
             title: "Ibraguim Albakov",
             description:

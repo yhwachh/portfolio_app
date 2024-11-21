@@ -24,11 +24,11 @@ class ProjectCard extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: theme.colors.bgColor,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: UIColorData.gray200,
-          width: 2,
+          color: theme.colors.borderColor,
+          width: 0.8,
         ),
       ),
       child: Wrap(
@@ -36,7 +36,7 @@ class ProjectCard extends StatelessWidget {
         children: [
           if (flipCard)
             _descriptionCard(title, description, tags, onTap, theme),
-          _imageCard(UrlImage),
+          _imageCard(UrlImage, theme),
           if (!flipCard)
             _descriptionCard(title, description, tags, onTap, theme),
         ],
@@ -45,12 +45,12 @@ class ProjectCard extends StatelessWidget {
   }
 }
 
-Container _imageCard(String UrlImage) {
+Container _imageCard(String UrlImage, dynamic theme) {
   return Container(
       height: 480,
       width: 576,
       decoration: BoxDecoration(
-        color: UIColorData.gray50,
+        color: theme.colors.fgColor,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Center(
@@ -83,6 +83,7 @@ Container _descriptionCard(String title, String description, List<String> tags,
           Text(
             title,
             style: TextStyle(
+              color: theme.colors.textColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),

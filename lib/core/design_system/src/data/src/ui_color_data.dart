@@ -3,22 +3,29 @@ part of app_ui;
 class UIColorData {
   final Color bgColor;
   final Color textColor;
+  final Color fgColor;
+  final Color borderColor;
 
-  const UIColorData({
-    required this.bgColor,
-    required this.textColor,
-  });
+  const UIColorData(
+      {required this.bgColor,
+      required this.textColor,
+      required this.fgColor,
+      required this.borderColor});
 
   factory UIColorData.light() {
     return const UIColorData(
       bgColor: wigth,
       textColor: black,
+      fgColor: gray50,
+      borderColor: gray200,
     );
   }
 
   factory UIColorData.dark() => const UIColorData(
         bgColor: black,
         textColor: wigth,
+        fgColor: Color.fromARGB(255, 39, 39, 40),
+        borderColor: Color.fromARGB(255, 143, 138, 138),
       );
 
   // Primary
