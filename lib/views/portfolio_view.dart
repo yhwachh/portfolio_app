@@ -220,7 +220,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
             if (isMobileSize)
               LeftMenu(
                 selectedPage: _selectedIndex,
-                onChanged: (index) {r
+                onChanged: (index) {
                   onCrollToId(index.toString());
                 },
               ),
