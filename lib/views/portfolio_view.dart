@@ -14,6 +14,7 @@ import 'package:portfolio_app/views/pages/projects_page.dart';
 import 'package:portfolio_app/views/pages/skills_page.dart';
 import 'package:scroll_to_id/scroll_to_id.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'dart:html' as html;
 
 @RoutePage()
 class PortfolioViewPage extends StatefulWidget {
@@ -133,7 +134,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           centerTitle: false,
           backgroundColor: theme.colors.bgColor,
           title: Text(
-            'IBA.',
+            'IBRA.',
             style: TextStyle(
               color: theme.colors.textColor,
               fontSize: 24,
@@ -182,14 +183,15 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                   SizedBox(width: 30),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: theme.colors.bgColor,
+                        backgroundColor: theme.colors.textColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        downloadFile("/assets/files/CV_Ibraguim_Albakov.pdf");
+                      },
                       child: Text(
                         "Download CV",
                         style: TextStyle(
-                          backgroundColor: theme.colors.bgColor,
-                          color: theme.colors.textColor,
+                          color: theme.colors.bgColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -231,5 +233,11 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
   void onCrollToId(String id) {
     scrollToId.animateTo(id,
         duration: Duration(milliseconds: 600), curve: Curves.fastOutSlowIn);
+  }
+
+  downloadFile(url) {
+    html.AnchorElement anchorElement = html.AnchorElement(href: url);
+    anchorElement.download = "CV_Ibraguim_Albakov";
+    anchorElement.click();
   }
 }
