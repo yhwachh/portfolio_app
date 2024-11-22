@@ -229,7 +229,6 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           ],
         ));
   }
-
   void onCrollToId(String id) {
     scrollToId.animateTo(id,
         duration: Duration(milliseconds: 600), curve: Curves.fastOutSlowIn);
