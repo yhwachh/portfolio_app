@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/core/routes/app_router.dart';
 import 'package:portfolio_app/core/l10n/l10n.dart';
+import 'package:portfolio_app/providers/app_language_provider.dart';
 import 'package:portfolio_app/providers/app_theme_provider.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appThemeData = ref.watch(appThemeProvider);
+    final appLanguageData = ref.watch(appLanguageProvider);
     return AppTheme(
       data: appThemeData,
       child: MaterialApp.router(
@@ -27,7 +29,7 @@ class MyApp extends ConsumerWidget {
           useMaterial3: true,
         ),
         supportedLocales: L10n.all,
-        locale: const Locale('en'),
+        locale: appLanguageData,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

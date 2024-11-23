@@ -5,6 +5,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
+import 'package:portfolio_app/providers/app_language_provider.dart';
 import 'package:portfolio_app/providers/app_theme_provider.dart';
 import 'package:portfolio_app/views/pages/about_me_page.dart';
 import 'package:portfolio_app/views/pages/contact_page.dart';
@@ -31,6 +32,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
   late final ScrollController scrollController;
   int _selectedIndex = 0;
   bool isDarkMode = false;
+  bool isEnglish = false;
 
   void listenScroll() {
     final index = scrollToId.idPosition();
@@ -146,6 +148,48 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
               padding: const EdgeInsets.only(right: 20),
               child: Row(
                 children: [
+                  Text("EN",
+                      style: TextStyle(
+                        color: theme.colors.textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  Consumer(builder: (context, ref, child) {
+                    return Transform.scale(
+                      scale: 0.7,
+                      child: SizedBox(
+                        height: 20,
+                        width: 40,
+                        child: CupertinoSwitch(
+                          // This bool value toggles the switch.
+                          value: isEnglish,
+                          activeColor: Colors.black,
+                          onChanged: (value) {
+                            // This is called when the user toggles the switch.
+                            setState(() {
+                              isEnglish = value;
+                              ref.read(appLanguageProvider.notifier).state =
+                                  isEnglish ? Locale('fr') : Locale('en');
+                            });
+                          },
+                        ),
+                      ),
+                    );
+                  }),
+                  Text("FR",
+                      style: TextStyle(
+                        color: theme.colors.textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  if (isMobileSize) SizedBox(width: 15),
+                  if (isMobileSize)
+                    Container(
+                      height: 20,
+                      width: 1,
+                      color: theme.colors.textColor,
+                    ),
+                  SizedBox(width: 15),
                   Icon(
                     Icons.light_mode,
                     color: theme.colors.textColor,
@@ -229,6 +273,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           ],
         ));
   }
+
   void onCrollToId(String id) {
     scrollToId.animateTo(id,
         duration: Duration(milliseconds: 600), curve: Curves.fastOutSlowIn);
