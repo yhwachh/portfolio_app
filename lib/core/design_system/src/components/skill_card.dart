@@ -15,13 +15,11 @@ class SkillCard extends StatelessWidget {
       SizedBox(height: 64, width: 64, child: Image.asset(urlimage)),
       SizedBox(
           width: 100,
-          child: Flexible(
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: theme.colors.textColor,
-              ),
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: theme.colors.textColor,
             ),
           )),
     ]);

@@ -45,7 +45,7 @@ class SkillPage extends ConsumerWidget {
                     }).toList(),
                   );
                 },
-                loading: () => Center(child: CircularProgressIndicator()),
+                loading: () => const Center(child: CircularProgressIndicator()),
                 error: (error, stack) => Center(child: Text('Error: $error')),
               ),
             ],
