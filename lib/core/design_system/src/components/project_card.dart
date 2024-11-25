@@ -21,6 +21,8 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final isMobileSize = screenSize.width > 600 && screenSize.height > 770;
     final theme = AppTheme.of(context);
     return Container(
       decoration: BoxDecoration(
@@ -36,7 +38,7 @@ class ProjectCard extends StatelessWidget {
         children: [
           if (flipCard)
             _descriptionCard(title, description, tags, onTap, theme),
-          _imageCard(UrlImage, theme),
+          _imageCard(UrlImage, theme, isMobileSize),
           if (!flipCard)
             _descriptionCard(title, description, tags, onTap, theme),
         ],
@@ -45,10 +47,12 @@ class ProjectCard extends StatelessWidget {
   }
 }
 
-Container _imageCard(String UrlImage, dynamic theme) {
+Container _imageCard(String UrlImage, dynamic theme, final isMobileSize) {
   return Container(
-      height: 480,
-      width: 576,
+      constraints: BoxConstraints(
+        minHeight: 500,
+      ),
+      width: 570,
       decoration: BoxDecoration(
         color: theme.colors.fgColor,
         borderRadius: BorderRadius.circular(16),
@@ -71,8 +75,10 @@ Container _imageCard(String UrlImage, dynamic theme) {
 Container _descriptionCard(String title, String description, List<String> tags,
     VoidCallback onTap, dynamic theme) {
   return Container(
-    height: 480,
-    width: 576,
+    constraints: BoxConstraints(
+      minHeight: 500,
+    ),
+    width: 570,
     child: Padding(
       padding: const EdgeInsets.all(40.0),
       child: Column(
@@ -89,13 +95,13 @@ Container _descriptionCard(String title, String description, List<String> tags,
             ),
           ),
           SizedBox(height: 25.0),
-          // Description
+
           Text(
             description,
             style: TextStyle(fontSize: 16, color: Colors.grey[800]),
           ),
           SizedBox(height: 25.0),
-          // Tags
+
           Wrap(
             spacing: 8.0,
             runSpacing: 8.0,

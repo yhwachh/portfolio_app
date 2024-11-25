@@ -61,7 +61,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
     final locale = AppLocalizations.of(context)!;
     final theme = AppTheme.of(context);
     final screenSize = MediaQuery.of(context).size;
-    final isMobileSize = screenSize.width > 600 && screenSize.height > 700;
+    final isMobileSize = screenSize.width > 600 && screenSize.height > 770;
     return Scaffold(
         floatingActionButton: (isMobileSize)
             ? null
@@ -136,7 +136,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           centerTitle: false,
           backgroundColor: theme.colors.bgColor,
           title: Text(
-            'IBRA.',
+            'I.A',
             style: TextStyle(
               color: theme.colors.textColor,
               fontSize: 24,
@@ -233,7 +233,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                         downloadFile("/assets/files/CV_Ibraguim_Albakov.pdf");
                       },
                       child: Text(
-                        "Download CV",
+                        isMobileSize ? "Download CV" : "CV",
                         style: TextStyle(
                           color: theme.colors.bgColor,
                           fontSize: 16,

@@ -14,7 +14,7 @@ class ExperienceCard extends StatelessWidget {
     final theme = AppTheme.of(context);
     return Container(
       width: 374,
-      height: 257,
+      height: 370,
       decoration: BoxDecoration(
         border: Border.all(
           color: theme.colors.borderColor,
