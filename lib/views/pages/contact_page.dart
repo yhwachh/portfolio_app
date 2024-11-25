@@ -50,11 +50,13 @@ class ContactPage extends ConsumerWidget {
                   ),
                   SizedBox(width: 30),
                   ContactMeCard(
-                    height: 60,
-                    width: 60,
-                    imagePhath: 'assets/images/gmail2.png',
-                    onTap: () {},
-                  ),
+                      height: 60,
+                      width: 60,
+                      imagePhath: 'assets/images/gmail2.png',
+                      onTap: () async {
+                        final url = myDataProvider.user.email;
+                        await _launchURL('mailto:${url}');
+                      }),
                 ],
               );
             },
@@ -65,7 +67,6 @@ class ContactPage extends ConsumerWidget {
       ),
     );
   }
-
   // Méthode pour lancer l'URL
   Future<void> _launchURL(String url) async {
     final uri = Uri.parse(url);
