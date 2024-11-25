@@ -1,11 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
-import 'package:portfolio_app/core/l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:portfolio_app/core/routes/app_router.gr.dart';
-import 'package:portfolio_app/views/pages/contact_page.dart';
-import 'package:portfolio_app/views/pages/left_menu.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {

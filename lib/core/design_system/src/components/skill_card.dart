@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
-import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
 
 class SkillCard extends StatelessWidget {
   final String urlimage;

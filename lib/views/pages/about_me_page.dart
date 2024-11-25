@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
-import 'package:portfolio_app/core/design_system/src/components/soft_skill_card.dart';
 import 'package:portfolio_app/core/design_system/src/components/experience_card.dart';
 import 'package:portfolio_app/core/design_system/src/components/profile_component.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

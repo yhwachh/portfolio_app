@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
-import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/providers/app_language_provider.dart';
 import 'package:portfolio_app/providers/app_theme_provider.dart';
 import 'package:portfolio_app/views/pages/about_me_page.dart';
@@ -61,7 +60,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
     final locale = AppLocalizations.of(context)!;
     final theme = AppTheme.of(context);
     final screenSize = MediaQuery.of(context).size;
-    final isMobileSize = screenSize.width > 600 && screenSize.height > 770;
+    final isMobileSize = screenSize.width > 680 && screenSize.height > 780;
     return Scaffold(
         floatingActionButton: (isMobileSize)
             ? null
