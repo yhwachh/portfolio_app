@@ -33,10 +33,10 @@
         },
         {
             "title": "Développeur d'applications mobiles (iOS/Android)",
-            "description": "Lors de mon stage de quatre mois chez Gargalo, un réseau social basé sur les liens familiaux, j'ai participé au développement d'applications mobiles iOS et Android. J'ai utilisé Flutter et Dart pour concevoir des interfaces utilisateur fluides et réactives, tout en intégrant les fonctionnalités nécessaires à l'interactivité de l'application. J'ai également travaillé avec des outils comme Firma et Notion pour la gestion de projet et la documentation. Mon rôle a consisté à contribuer à la création de nouvelles fonctionnalités, à la résolution de bugs et à l'optimisation des performances des applications pour garantir une expérience utilisateur optimale.",
+            "description": "Lors de mon stage de quatre mois chez Gargalo, un réseau social basé sur les liens familiaux, j'ai participé au développement d'applications mobiles iOS et Android. J'ai utilisé Flutter et Dart pour concevoir des interfaces utilisateur fluides et réactives, tout en intégrant les fonctionnalités nécessaires à l'interactivité de l'application. J'ai également travaillé avec des outils comme Firma et Notion pour la gestion de projet et la documentation. Mon rôle a consisté à contribuer à la création de nouvelles fonctionnalités, à la résolution de bugs et à l'optimisation.",
             "skills": ["Flutter", "Dart", "Firebase", "Figma"],
             "link": "https://gargalo.ru/",
-            "image_path": "assets/images/gargalo.png"
+            "image_path": "assets/images/poster_gargalo.png"
 
         }
     ],

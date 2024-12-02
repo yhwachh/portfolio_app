@@ -36,7 +36,7 @@
             "description": "During my 4-month internship at Gargalo, a social network focused on family connections, I participated in the development of mobile applications for both iOS and Android. I used Flutter and Dart to design smooth and responsive user interfaces while integrating features that enhanced the app's interactivity. I also worked with tools like Firma and Notion for project management and documentation. My responsibilities included contributing to the creation of new features, resolving bugs, and optimizing app performance to ensure an excellent user experience.",
             "skills": ["Flutter", "Dart", "Firebase", "Figma", "Notion"],
             "link": "https://gargalo.ru/",
-            "image_path": "assets/images/gargalo.png"
+            "image_path": "assets/images/poster_gargalo.png"
 
         }
 
