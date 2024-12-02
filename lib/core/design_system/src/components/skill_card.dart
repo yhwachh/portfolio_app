@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
-import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
 
 class SkillCard extends StatelessWidget {
   final String urlimage;
@@ -18,7 +18,7 @@ class SkillCard extends StatelessWidget {
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style:  GoogleFonts.montserrat(
               color: theme.colors.textColor,
             ),
           )),

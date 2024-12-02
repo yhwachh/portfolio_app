@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -47,8 +48,10 @@ class ProjectCard extends StatelessWidget {
 
 Container _imageCard(String UrlImage, dynamic theme) {
   return Container(
-      height: 480,
-      width: 576,
+      constraints: BoxConstraints(
+        minHeight: 500,
+      ),
+      width: 570,
       decoration: BoxDecoration(
         color: theme.colors.fgColor,
         borderRadius: BorderRadius.circular(16),
@@ -71,8 +74,10 @@ Container _imageCard(String UrlImage, dynamic theme) {
 Container _descriptionCard(String title, String description, List<String> tags,
     VoidCallback onTap, dynamic theme) {
   return Container(
-    height: 480,
-    width: 576,
+    constraints: BoxConstraints(
+      minHeight: 500,
+    ),
+    width: 570,
     child: Padding(
       padding: const EdgeInsets.all(40.0),
       child: Column(
@@ -82,20 +87,20 @@ Container _descriptionCard(String title, String description, List<String> tags,
           // Title
           Text(
             title,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: theme.colors.textColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(height: 25.0),
-          // Description
+
           Text(
             description,
-            style: TextStyle(fontSize: 16, color: Colors.grey[800]),
+            style:  GoogleFonts.montserrat(fontSize: 16, color: Colors.grey[800]),
           ),
           SizedBox(height: 25.0),
-          // Tags
+
           Wrap(
             spacing: 8.0,
             runSpacing: 8.0,
@@ -105,7 +110,7 @@ Container _descriptionCard(String title, String description, List<String> tags,
                 child: Text(
                   tag,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style:  GoogleFonts.montserrat(
                     fontSize: 12,
                   ),
                 ),

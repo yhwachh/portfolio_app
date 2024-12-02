@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/core/design_system/src/components/page_title.dart';
 import 'package:portfolio_app/core/design_system/src/components/skill_card.dart';
@@ -31,7 +32,10 @@ class SkillPage extends ConsumerWidget {
             children: [
               Text(
                 locale.txt_skills_title,
-                style: TextStyle(color: theme.colors.textColor),
+                style: GoogleFonts.montserrat(
+                  textStyle:
+                      GoogleFonts.montserrat(color: theme.colors.textColor),
+                ),
               ),
               const SizedBox(height: 30),
               myDataAsyncValue.when(

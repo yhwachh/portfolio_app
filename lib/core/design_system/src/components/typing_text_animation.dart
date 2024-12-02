@@ -63,6 +63,17 @@ class TypingTextAnimationState extends State<TypingTextAnimation>
   }
 
   @override
+  void didUpdateWidget(covariant TypingTextAnimation oldWidget) {
+    if (widget.texts.firstOrNull != oldWidget.texts.firstOrNull)
+      setState(() {
+        _animationController
+          ..reset()
+          ..forward();
+      });
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void dispose() {
     _animationController.dispose();
     super.dispose();

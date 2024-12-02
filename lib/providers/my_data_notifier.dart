@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_app/controllers/my_data_controller.dart';
 import 'package:portfolio_app/models/my_data_model.dart';
-import 'package:portfolio_app/models/user_model.dart';
 import 'package:portfolio_app/providers/app_language_provider.dart';
 
 class MyDataNotifier extends StateNotifier<AsyncValue<MyDataModel>> {

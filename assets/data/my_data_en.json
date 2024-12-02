@@ -25,24 +25,50 @@
     ],
     "projects": [
         {
-            "title": "Flutter App",
-            "description": "Flutter app for tracking your daily expenses",
-            "skills": ["Flutter", "Dart", "Firebase", "Figma"],
-            "link": "",
-            "image_path": "assets/images/ingush.png"
+            "title": "Salesforce Application Developer",
+            "description": "During this six-month internship, I contributed to the design and development of customized Salesforce solutions to meet user needs while optimizing process efficiency. I created automated flows (Flows), Lightning pages, LWC (Lightning Web Components), and Validation Rules to ensure data quality and integrity. Additionally, I took on Salesforce administration tasks, managing users, permissions, and security settings.",
+            "skills":["JavaScript", "HTML5", "CSS3", "Apex", "Salesforce"],
+            "link": "https://www.salesforce.com/trailblazer/hec9oj3q8n93nfdvn0",
+            "image_path": "assets/images/salesforce_image2.webp"
         },
         {
-            "title": "firebase App",
-            "description": "Flutter app for tracking your daily expenses",
-            "skills": ["Flutter", "Dart", "Firebase", "Figma"],
-            "link": "",
-            "image_path": "assets/images/ingush.png"
+            "title": "Mobile Application Developer (iOS/Android)",
+            "description": "During my 4-month internship at Gargalo, a social network focused on family connections, I participated in the development of mobile applications for both iOS and Android. I used Flutter and Dart to design smooth and responsive user interfaces while integrating features that enhanced the app's interactivity. I also worked with tools like Firma and Notion for project management and documentation. My responsibilities included contributing to the creation of new features, resolving bugs, and optimizing app performance to ensure an excellent user experience.",
+            "skills": ["Flutter", "Dart", "Firebase", "Figma", "Notion"],
+            "link": "https://gargalo.ru/",
+            "image_path": "assets/images/poster_gargalo.png"
 
         }
-    ]
+
+        
+    ],
+    "experiences": [
+        
+        {
+            "title": "Problem-Solving",
+            "description": "Thanks to my training at École 42 and my experience as a Salesforce developer in a large company, I have developed an exceptional ability to solve complex problems. My analytical mindset enables me to break down problems into smaller, manageable parts, making them easier to resolve. Additionally, working on Salesforce solutions often requires creativity to customize and integrate features based on specific client needs. Working on remote projects has also helped me develop resilience, allowing me to stay focused and overcome obstacles, even in challenging situations."
+        },
+        
+        {
+            "title": "Communication",
+            "description": "My role in a large company like Socomec has taught me the importance of effective communication within multidisciplinary teams. I excel at clearly explaining technical concepts to non-technical colleagues, ensuring that everyone understands the objectives and proposed solutions. Additionally, I focus on producing clear and detailed documentation, which is essential for project maintenance and sustainability. Finally, my experience in developing Salesforce applications has sharpened my active listening skills, a key asset for understanding user needs and delivering tailored solutions."
+        },
+        {
+            "title": "Teamwork",
+            "description": "In my previous role, I closely collaborated with developers and project managers, which strengthened my ability to work effectively in a team. My empathy allows me to understand the perspectives of other team members, fostering harmonious collaboration. I have also learned to handle conflicts constructively, focusing on finding solutions rather than dwelling on disagreements."
+        },
+        
+        {
+            "title": "Time Management",
+            "description": "While working on remote projects, such as in the startup Gargalo, I have learned to be autonomous and manage my time effectively. I am skilled at prioritizing important tasks to maximize efficiency while meeting deadlines, even under pressure. The rigorous planning approach I have adopted has enabled me to deliver complex projects on time while maintaining a high standard of quality."
+        },
+        {
+            "title": "Curiosity and Thirst for Learning",
+            "description": "My time at École 42 instilled in me an insatiable curiosity for new technologies. I constantly strive to stay updated with the latest technological advancements and explore innovative approaches to solve technical challenges. My proactivity has allowed me to deepen my skills, whether through self-learning or by collaborating with experts within high-performing teams."
+        }
+        
     
-
-
+    ]
 
 
 }

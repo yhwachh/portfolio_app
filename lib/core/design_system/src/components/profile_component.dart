@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class ProfileComponent extends StatelessWidget {
@@ -31,14 +32,14 @@ class ProfileComponent extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(width: 16),
+              SizedBox(width: 30),
               Builder(builder: (context) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (constraints.maxWidth < 800) SizedBox(height: 20),
                     Text(title,
-                        style: TextStyle(
+                        style:  GoogleFonts.montserrat(
                             color: theme.colors.textColor,
                             fontSize: 24,
                             fontWeight: FontWeight.bold)),
@@ -47,7 +48,7 @@ class ProfileComponent extends StatelessWidget {
                         width: 500,
                         child: Text(
                           description,
-                          style: TextStyle(
+                          style:  GoogleFonts.montserrat(
                             color: theme.colors.textColor,
                           ),
                         ))

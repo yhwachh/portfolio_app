@@ -37,6 +37,7 @@ dependencies:
   flutter_riverpod: ^2.6.1
   url_launcher: ^6.3.1
   animated_fab_button_menu: ^0.0.2
+  google_fonts: ^6.2.1
 
 
   # The following adds the Cupertino Icons font to your application.

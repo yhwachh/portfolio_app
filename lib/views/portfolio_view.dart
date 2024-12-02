@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio_app/core/design_system/app_ui.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:portfolio_app/providers/app_language_provider.dart';
 import 'package:portfolio_app/providers/app_theme_provider.dart';
@@ -37,6 +37,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
   void listenScroll() {
     final index = scrollToId.idPosition();
     if (index == null) return;
+
     setState(() {
       _selectedIndex = int.parse(index);
     });
@@ -61,7 +62,8 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
     final locale = AppLocalizations.of(context)!;
     final theme = AppTheme.of(context);
     final screenSize = MediaQuery.of(context).size;
-    final isMobileSize = screenSize.width > 600 && screenSize.height > 700;
+    final isMobileSize = screenSize.width > 680 && screenSize.height > 780;
+
     return Scaffold(
         floatingActionButton: (isMobileSize)
             ? null
@@ -77,26 +79,31 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                   Icons.arrow_back,
                   color: Colors.white,
                 ),
-                overlayOpacity: 0.5,
-                overlayColor: theme.colors.fgColor,
+                overlayOpacity: 0.9,
+                overlayColor: theme.colors.bgColor,
                 children: [
                   MenuItem(
                     title: locale.txt_home,
                     onTap: () {
                       onCrollToId("0");
+                      context.router.maybePop();
                     },
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.montserrat(
+                      color: theme.colors.textColor
+                          .withOpacity(_selectedIndex == 0 ? 1.0 : 0.3),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   MenuItem(
                     title: locale.txt_skill,
                     onTap: () {
                       onCrollToId("1");
+                      context.router.maybePop();
                     },
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: GoogleFonts.montserrat(
+                        color: theme.colors.textColor
+                            .withOpacity(_selectedIndex == 1 ? 1.0 : 0.3),
                         fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
@@ -104,9 +111,11 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                     title: locale.txt_projects,
                     onTap: () {
                       onCrollToId("2");
+                      context.router.maybePop();
                     },
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: GoogleFonts.montserrat(
+                        color: theme.colors.textColor
+                            .withOpacity(_selectedIndex == 2 ? 1.0 : 0.3),
                         fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
@@ -114,9 +123,11 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                     title: locale.txt_about_me,
                     onTap: () {
                       onCrollToId("3");
+                      context.router.maybePop();
                     },
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: GoogleFonts.montserrat(
+                        color: theme.colors.textColor
+                            .withOpacity(_selectedIndex == 3 ? 1.0 : 0.3),
                         fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
@@ -124,9 +135,11 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                     title: locale.txt_contact,
                     onTap: () {
                       onCrollToId("4");
+                      context.router.maybePop();
                     },
-                    style: const TextStyle(
-                        color: Colors.white,
+                    style: GoogleFonts.montserrat(
+                        color: theme.colors.textColor
+                            .withOpacity(_selectedIndex == 4 ? 1.0 : 0.3),
                         fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
@@ -136,8 +149,8 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           centerTitle: false,
           backgroundColor: theme.colors.bgColor,
           title: Text(
-            'IBRA.',
-            style: TextStyle(
+            'I.A',
+            style: GoogleFonts.montserrat(
               color: theme.colors.textColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -149,7 +162,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
               child: Row(
                 children: [
                   Text("EN",
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         color: theme.colors.textColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -177,7 +190,7 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                     );
                   }),
                   Text("FR",
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         color: theme.colors.textColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -233,8 +246,8 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                         downloadFile("/assets/files/CV_Ibraguim_Albakov.pdf");
                       },
                       child: Text(
-                        "Download CV",
-                        style: TextStyle(
+                        isMobileSize ? "Download CV" : "CV",
+                        style: GoogleFonts.montserrat(
                           color: theme.colors.bgColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

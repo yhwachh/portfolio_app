@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class PageTitle extends StatelessWidget {
@@ -21,7 +22,7 @@ class PageTitle extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style:  GoogleFonts.montserrat(
               color: theme.colors.textColor,
               fontSize: 30,
               fontWeight: FontWeight.bold,

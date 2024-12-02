@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,6 +6,7 @@ import 'package:portfolio_app/core/design_system/src/components/page_title.dart'
 import 'package:portfolio_app/core/design_system/src/components/project_card.dart';
 import 'package:portfolio_app/providers/my_data_notifier.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 @RoutePage()
 class ProjectsPage extends ConsumerWidget {
@@ -40,7 +39,12 @@ class ProjectsPage extends ConsumerWidget {
                   description: project.description,
                   UrlImage: project.imagePath,
                   tags: project.skills,
-                  onTap: () => print("object"),
+                  onTap: () async {
+                    final url = project.link;
+                    if (url != null) {
+                      await _launchURL(url);
+                    }
+                  },
                 ),
               );
             }).toList());
@@ -50,5 +54,16 @@ class ProjectsPage extends ConsumerWidget {
         ),
       ],
     );
+  }
+
+  // Méthode pour lancer l'URL
+  Future<void> _launchURL(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      // Si l'URL ne peut pas être ouverte, vous pouvez afficher un message d'erreur
+      throw 'Could not launch $url';
+    }
   }
 }
