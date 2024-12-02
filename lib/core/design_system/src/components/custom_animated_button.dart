@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class CustomAnimatedButton extends StatelessWidget {
@@ -26,17 +27,12 @@ class CustomAnimatedButton extends StatelessWidget {
             ),
           ),
         ),
-        child: Opacity(
-          opacity: isSelected ? 1.0 : 0.3, // 1.0 si sélectionné, sinon 0.3
-          child: Text(
-            label,
-            style: TextStyle(
-              color: isSelected
-                  ? theme.colors.textColor
-                  : theme.colors.textColor
-                      .withOpacity(0.7), // Texte noir ou légèrement transparent
-              fontWeight: FontWeight.bold,
-            ),
+        child: Text(
+          label,
+          style:  GoogleFonts.montserrat(
+            color: theme.colors.textColor.withOpacity(isSelected ? 1 : 0.3),
+            // Texte noir ou légèrement transparent
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

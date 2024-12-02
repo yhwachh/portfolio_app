@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -21,8 +22,6 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final isMobileSize = screenSize.width > 600 && screenSize.height > 770;
     final theme = AppTheme.of(context);
     return Container(
       decoration: BoxDecoration(
@@ -38,7 +37,7 @@ class ProjectCard extends StatelessWidget {
         children: [
           if (flipCard)
             _descriptionCard(title, description, tags, onTap, theme),
-          _imageCard(UrlImage, theme, isMobileSize),
+          _imageCard(UrlImage, theme),
           if (!flipCard)
             _descriptionCard(title, description, tags, onTap, theme),
         ],
@@ -47,7 +46,7 @@ class ProjectCard extends StatelessWidget {
   }
 }
 
-Container _imageCard(String UrlImage, dynamic theme, final isMobileSize) {
+Container _imageCard(String UrlImage, dynamic theme) {
   return Container(
       constraints: BoxConstraints(
         minHeight: 500,
@@ -88,7 +87,7 @@ Container _descriptionCard(String title, String description, List<String> tags,
           // Title
           Text(
             title,
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: theme.colors.textColor,
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -98,7 +97,7 @@ Container _descriptionCard(String title, String description, List<String> tags,
 
           Text(
             description,
-            style: TextStyle(fontSize: 16, color: Colors.grey[800]),
+            style:  GoogleFonts.montserrat(fontSize: 16, color: Colors.grey[800]),
           ),
           SizedBox(height: 25.0),
 
@@ -111,7 +110,7 @@ Container _descriptionCard(String title, String description, List<String> tags,
                 child: Text(
                   tag,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style:  GoogleFonts.montserrat(
                     fontSize: 12,
                   ),
                 ),

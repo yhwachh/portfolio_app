@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/design_system/app_ui.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -23,10 +24,10 @@ class HomePage extends StatelessWidget {
             TypingTextAnimation(
               texts: [
                 localizations.txt_home_intro0,
-                localizations.txt_home_intro1
+                localizations.txt_home_intro1,
               ],
-              textStyle:
-                  TextStyle(color: theme.colors.textColor, fontSize: 24.0),
+              textStyle: GoogleFonts.montserrat(
+                  color: theme.colors.textColor, fontSize: 24.0),
             ),
           ],
         )),

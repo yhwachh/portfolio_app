@@ -39,7 +39,6 @@ class AboutMePage extends ConsumerWidget {
                 urlImage: data.user.avatarPath,
               ),
               SizedBox(height: 50),
-              SizedBox(height: 50),
               myDataAsyncValue.when(
                 data: (data) {
                   return Wrap(
