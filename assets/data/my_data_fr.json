@@ -1,0 +1,76 @@
+{
+    "user": {
+        "name": "Ibraguim Albakov",
+        "email": "albakov.ibraguim@gmail.com",
+        "avatar_path": "assets/images/profile.jpeg",
+        "bio": "Après trois années d'expérience professionnelle, j'ai entrepris une reconversion en me formant aux langages de programmation C et C++, élargissant ensuite mes compétences à Dart et Python ainsi qu'à divers frameworks web. Animé par une curiosité sans cesse renouvelée, je nourris également un intérêt grandissant pour les connexions entre la programmation et l'économie, cherchant ainsi à approfondir mes connaissances dans ces domaines complémentaires.",
+        "linkedin_url": "https://www.linkedin.com/in/ibraguim-albakov",
+        "github_url": "https://github.com/yhwachh"
+    },
+    "skills": [ 
+        "flutter",
+        "Dart",
+        "Firebase",
+        "C++",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Python",
+        "Docker",
+        "Figma",
+        "Notion",
+        "Github",
+        "Slack"
+
+    ],
+    "projects": [
+        {
+            "title": "Développeur d'applications Salesforce",
+            "description": "Au cours de ce stage de six mois, j'ai contribué à la conception et au développement de solutions Salesforce personnalisées pour répondre aux besoins des utilisateurs tout en optimisant l'efficacité des processus. J'ai créé des flux automatisés (Flows), des pages Lightning, des composants LWC (Lightning Web Components) et des règles de validation (Validation Rules) pour garantir la qualité et l'intégrité des données. En parallèle, j'ai assuré des fonctions d'administration Salesforce, en gérant les utilisateurs, les autorisations et les paramètres de sécurité.",
+            "skills": ["JavaScript", "HTML5", "CSS3", "Apex", "Salesforce"],
+            "link": "https://www.salesforce.com/trailblazer/hec9oj3q8n93nfdvn0",
+            "image_path": "assets/images/salesforce_image2.webp"
+        },
+        {
+            "title": "Développeur d'applications mobiles (iOS/Android)",
+            "description": "Lors de mon stage de quatre mois chez Gargalo, un réseau social basé sur les liens familiaux, j'ai participé au développement d'applications mobiles iOS et Android. J'ai utilisé Flutter et Dart pour concevoir des interfaces utilisateur fluides et réactives, tout en intégrant les fonctionnalités nécessaires à l'interactivité de l'application. J'ai également travaillé avec des outils comme Firma et Notion pour la gestion de projet et la documentation. Mon rôle a consisté à contribuer à la création de nouvelles fonctionnalités, à la résolution de bugs et à l'optimisation.",
+            "skills": ["Flutter", "Dart", "Firebase", "Figma"],
+            "link": "https://gargalo.ru/",
+            "image_path": "assets/images/poster_gargalo.png"
+
+        }
+    ],
+
+    "experiences": [
+        
+        {
+            "title": "Résolution de problèmes",
+            "description": "Grâce à ma formation à l'École 42 et mon expérience en tant que développeur Salesforce dans une grande entreprise, j'ai acquis une capacité exceptionnelle à résoudre des problèmes complexes. Mon esprit analytique me permet de découper des problèmes en petites parties gérables, facilitant ainsi leur résolution. De plus, travailler sur des solutions Salesforce exige souvent de la créativité pour personnaliser et intégrer des fonctionnalités en fonction des besoins spécifiques des clients. En travaillant sur des projets à distance, j'ai également développé une résilience qui m'aide à rester concentré et à surmonter les obstacles, même dans des situations difficiles."
+            
+        },
+        {
+            "title": "Communication",
+            "description": "Mon rôle dans une grande entreprise comme Socomec m'a appris l'importance de la communication efficace au sein d'équipes multidisciplinaires. J'excelle dans l'explication claire des concepts techniques aux collègues non techniques, en m'assurant que chacun comprend les objectifs et les solutions proposées. De plus, je veille à produire une documentation claire et détaillée, essentielle pour la maintenance et la pérennité des projets. Enfin, mon expérience dans le développement d'applications Salesforce m'a sensibilisé à l'écoute active, un atout clé pour bien comprendre les besoins des utilisateurs et livrer des solutions qui leur correspondent."
+            
+        },
+        {
+            "title": "Travail d’équipe",
+            "description": "Dans mon précédent poste, j'ai collaboré étroitement avec des développeurs et des chefs de projet ce qui a renforcé ma capacité à travailler efficacement en équipe. Mon empathie me permet de comprendre les perspectives des autres membres de l'équipe, favorisant une collaboration harmonieuse. J'ai également appris à gérer les conflits de manière constructive, en mettant l'accent sur la recherche de solutions plutôt que sur les désaccords."
+            
+        },
+        {
+            "title": "Gestion du temps",
+            "description": "En travaillant sur des projets à distance comme dans une start-up Gargalo, j'ai appris à être autonome et à gérer mon temps de manière optimale. Je sais prioriser les tâches importantes pour maximiser l'efficacité, tout en respectant les délais fixés, même sous pression. La planification rigoureuse que j'ai adoptée m'a permis de livrer des projets complexes à temps, tout en maintenant un haut niveau de qualité."
+            
+        },
+        {
+            "title": "Curiosité et soif d'apprendre",
+            "description":"Mon passage à l'École 42 m'a inculqué une curiosité insatiable pour les nouvelles technologies. Je m'efforce constamment de rester à jour avec les dernières évolutions technologiques et d'explorer des approches innovantes pour résoudre les défis techniques. Ma proactivité m'a permis d'approfondir mes compétences, que ce soit en autodidacte ou en collaborant avec des experts au sein d'équipes performantes."
+        }
+    ]
+    
+
+
+
+
+}
