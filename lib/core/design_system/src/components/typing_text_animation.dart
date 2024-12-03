@@ -82,17 +82,19 @@ class TypingTextAnimationState extends State<TypingTextAnimation>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: _animationController,
-        builder: (context, child) {
-          int currentIndex = _animation.value;
-          String displayText =
-              widget.texts[_currentTextIndex].substring(0, currentIndex);
-          return Flexible(
-            child: Text(
-              displayText + "_",
-              style: widget.textStyle,
-            ),
-          );
-        });
+      animation: _animationController,
+      builder: (context, child) {
+        int currentIndex =
+            _animation.value.clamp(0, widget.texts[_currentTextIndex].length);
+        String displayText =
+            widget.texts[_currentTextIndex].substring(0, currentIndex);
+        return Flexible(
+          child: Text(
+            displayText + "_",
+            style: widget.textStyle,
+          ),
+        );
+      },
+    );
   }
 }
