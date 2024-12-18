@@ -38,6 +38,7 @@ dependencies:
   url_launcher: ^6.3.1
   animated_fab_button_menu: ^0.0.2
   google_fonts: ^6.2.1
+  flutter_svg: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -77,7 +78,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/files/
+    - assets/files/CV_Ibraguim_Albakov.pdf
+    - assets/data/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
