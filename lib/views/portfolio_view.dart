@@ -149,10 +149,10 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
           centerTitle: false,
           backgroundColor: theme.colors.bgColor,
           title: Text(
-            'I.A',
-            style: GoogleFonts.montserrat(
+            'I',
+            style: GoogleFonts.playfairDisplay(
               color: theme.colors.textColor,
-              fontSize: 24,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -237,13 +237,14 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
                     color: theme.colors.textColor,
                     size: 17,
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: theme.colors.textColor,
                       ),
                       onPressed: () {
-                        downloadFile("/assets/files/CV_Ibraguim_Albakov.pdf");
+                        downloadFile(
+                            "assets/assets/files/CV_Ibraguim_Albakov.pdf");
                       },
                       child: Text(
                         isMobileSize ? "Download CV" : "CV",
@@ -268,11 +269,11 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
               child: InteractiveScrollViewer(
                 scrollToId: scrollToId,
                 children: [
-                  ScrollContent(id: "0", child: HomePage()),
-                  ScrollContent(id: "1", child: SkillPage()),
-                  ScrollContent(id: "2", child: ProjectsPage()),
-                  ScrollContent(id: "3", child: AboutMePage()),
-                  ScrollContent(id: "4", child: ContactPage()),
+                  ScrollContent(id: "0", child: const HomePage()),
+                  ScrollContent(id: "1", child: const SkillPage()),
+                  ScrollContent(id: "2", child: const ProjectsPage()),
+                  ScrollContent(id: "3", child: const AboutMePage()),
+                  ScrollContent(id: "4", child: const ContactPage()),
                 ],
               ),
             ),
@@ -289,12 +290,19 @@ class _PortfolioViewPageState extends State<PortfolioViewPage> {
 
   void onCrollToId(String id) {
     scrollToId.animateTo(id,
-        duration: Duration(milliseconds: 600), curve: Curves.fastOutSlowIn);
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.fastOutSlowIn);
   }
 
-  downloadFile(url) {
-    html.AnchorElement anchorElement = html.AnchorElement(href: url);
-    anchorElement.download = "CV_Ibraguim_Albakov";
-    anchorElement.click();
+  downloadFile(String url) {
+    try {
+      html.window.open(url, 'Ibraguim CV');
+      //final html.AnchorElement anchorElement = html.AnchorElement(href: url)
+      //..download = "CV_Ibraguim_Albakov.pdf"
+      //..target = 'blank';
+      //anchorElement.click();
+    } catch (e) {
+      print('Erreur lors du téléchargement : $e');
+    }
   }
 }

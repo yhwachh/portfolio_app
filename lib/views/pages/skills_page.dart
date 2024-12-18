@@ -44,7 +44,7 @@ class SkillPage extends ConsumerWidget {
                     children: data.skills.map((skill) {
                       return SkillCard(
                         title: skill,
-                        urlimage: "assets/images/$skill.png",
+                        urlimage: "assets/images/$skill.svg",
                       );
                     }).toList(),
                   );
