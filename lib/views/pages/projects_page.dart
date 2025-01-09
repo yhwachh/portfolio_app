@@ -56,13 +56,11 @@ class ProjectsPage extends ConsumerWidget {
     );
   }
 
-  // Méthode pour lancer l'URL
   Future<void> _launchURL(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
-      // Si l'URL ne peut pas être ouverte, vous pouvez afficher un message d'erreur
       throw 'Could not launch $url';
     }
   }
